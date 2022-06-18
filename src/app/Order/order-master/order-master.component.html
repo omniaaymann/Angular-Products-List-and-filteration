@@ -1,0 +1,23 @@
+<h2> Create your order </h2>
+<div class="form-group">
+    
+    <label for="prdCat" aria-placeholder="All">Category</label>
+     
+    <select class="form-control" name="cat" id="prdCat" [(ngModel)]="selectedCatID" >
+      <option value="0" selected>All</option>
+      <option *ngFor="let cat of catList" [value]="cat.id">{{cat.name}}</option>
+    </select>
+    <!-- <div class="text-secondary">
+        [to be removed] for test:
+        {{selectCatID}}
+  
+        <br>
+    </div> -->
+  </div>
+  <hr>
+  <div style="background-color: white;">
+    <app-product-list [sentCatID]="selectedCatID"></app-product-list>
+  </div>
+  
+  <hr>
+  <h3>Order Total Price: {{orderTotalPrice}} </h3>
